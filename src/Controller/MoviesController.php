@@ -93,7 +93,7 @@ class MoviesController extends AbstractController
                 // get the previous image path, delete it and store new image
                 if ($movie->getImagePath() !== null) {
                     if (file_exists($this->getParameter('kernel.project_dir') . '/public/' . $movie->getImagePath())) {
-                        unlink($this->getParameter('kernel.project_dir') . '/public/' . $movie->getImagePath());
+//                        unlink($this->getParameter('kernel.project_dir') . '/public/' . $movie->getImagePath());
 
                         $newFileName = uniqid() . '.' . $imagePath->guessExtension();
 
