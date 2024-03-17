@@ -21,22 +21,25 @@ class MovieFormType extends AbstractType
                     'class' => 'bg-transparent block border-b-2 w-full h-20 text-4xl outline-none',
                     'placeholder' => 'Enter Title...'
                 ),
-                'label' => false
+                'label' => false,
+                'required' => false,
             ])
             ->add('releaseYear', IntegerType::class, [
                 'attr' => array(
                     'class' => 'bg-transparent block border-b-2 mt-10 w-full h-20 text-4xl outline-none',
                     'placeholder' => 'Enter Release Year...',
-                    'min'=> 1888,
+                    'min' => 1888,
                 ),
-                'label' => false
+                'label' => false,
+                'required' => false,
             ])
             ->add('description', TextareaType::class, [
                 'attr' => array(
                     'class' => 'bg-transparent block border-b-2 mt-10 w-full h-60 text-2xl outline-none',
                     'placeholder' => 'Enter Description...'
                 ),
-                'label' => false
+                'label' => false,
+                'required' => false,
             ])
             ->add('imagePath', FileType::class, [
                 'required' => false,
@@ -45,8 +48,7 @@ class MovieFormType extends AbstractType
                     'class' => 'py-10',
                 ),
                 'label' => false
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
