@@ -15,9 +15,9 @@
 {% block header %}
     <header>
         <nav class="flex items-center justify-between flex-wrap p-6 fixed w-full z-10 top-0"
-                x-data="{ isOpen: false }"
-                @keydown.escape="isOpen = false"
-                :class="{ 'shadow-lg bg-gray-600' : isOpen , 'bg-gray-600' : !isOpen}">
+             x-data="{ isOpen: false }"
+             @keydown.escape="isOpen = false"
+             :class="{ 'shadow-lg bg-gray-600' : isOpen , 'bg-gray-600' : !isOpen}">
 
             <div class="flex items-center flex-shrink-0 text-white mr-6">
                 <a class="text-white no-underline hover:text-white hover:no-underline" href="/">
@@ -84,6 +84,14 @@
                                 href="/contact"
                                 @click="isOpen = false">
                             Contact
+                        </a>
+                    </li>
+
+                    <li class="mr-3">
+                        <a class="inline-block text-gray-300 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                           href="/{{ app.user ? 'logout' : 'login' }}"
+                           @click="isOpen = false">
+                            {{ app.user ? 'Logout' : 'Login' }}
                         </a>
                     </li>
                 </ul>
